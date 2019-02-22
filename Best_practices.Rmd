@@ -1,0 +1,37 @@
+---
+title: "R Coding Best Practices"
+author: "Florian M. Hollenbach"
+date: "2/22/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Some best practices for writing r-code (add more as discovered)
+
+## No use of ```{r} rm(list = ls()) ``` at beginning of files
+- Do not empty the workspace with ```{r} rm()```
+- ```{r} rm()``` keeps many previous settings 
+- For example, all the packages that were already loaded remain or options like ```{r} options(stringsAsFactors = FALSE)``` remain set
+- *Instead*: always start with a fresh r-session
+
+
+## No use of ```{r} setwd() ```
+
+- Instead: *use the here package*, see: [https://github.com/jennybc/here_here](https://github.com/jennybc/here_here)
+- If you use r-studio, create an R-project for the project in the main folder
+- When loading ```{r} library(here)``` within the project, the main folder will become the basis from which to declare any paths
+- Use ```{r} here()``` to declare paths from main folder
+- This means no more changing of paths, etc. 
+- The code will run on different machines or at different points in time. Even if we rename the main folder at some point or move it to a different location.
+
+## No massive package loading
+- Instead: *only load those packages that are actually used in the file*
+- Also, pay attention to function conflicts when loading, i.e., which functions are masked when loading a new package.
+- For example, if tidyverse is loaded the lag functions within plm, lfe will not work!
+- Instead: *use the conflicted package*,  see: [https://github.com/r-lib/conflicted](https://github.com/r-lib/conflicted)
+- The conflicted package will alert/throw an error when using any function that has conflict.
+- Also, when loading a package that has a conflicted function, immediately after loading the package declare which package to use the function from, e.g.: ```r{} conflict_prefer("filter", "dplyr") ### use filter from dplyr```
+  
