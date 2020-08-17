@@ -8,9 +8,22 @@ output: pdf_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Cheatsheets & R help
+You can find lot's of help for packages that are maintained by the Rstudio crowd on the Cheatsheet page: [https://rstudio.com/resources/cheatsheets/](https://rstudio.com/resources/cheatsheets/). For more advanced coding, I recommend the Hadley Wickham book, in part because it is free (but you should buy a copy if you can afford it): 
+[http://adv-r.had.co.nz/](http://adv-r.had.co.nz/). 
 
-# Some best practices for writing r-code
-## (To Be Continuously Updated)
+In general, there are lots of resources online and a lot of questions are answered on [Stack Overflow](https://stackoverflow.com/). For example, just found on Twitter today, here is a resource Joscelin Rocha Hidalgo put together on GitHub: (https://github.com/Joscelinrocha/Learning-R-resources/wiki)[https://github.com/Joscelinrocha/Learning-R-resources/wiki].
+
+
+# Some best practices for writing r-code 
+(To Be Continuously Updated)
+
+
+## Try to adhere to the r-studio style guide as much as possible
+- If possible and sensible, follow the r-studio style guide: [http://adv-r.had.co.nz/Style.html](http://adv-r.had.co.nz/Style.html).  It will make your code more readable.
+
+## Comment, Comment, Comment
+- You should add comments to almost every line in your code. This will help others to understand your code but also help your future self when you come back to the file one, two, or ten years from now.
 
 ## No use of ```rm(list = ls()) ``` at beginning of files
 - Do not empty the workspace with ```rm()```.
@@ -38,9 +51,9 @@ knitr::opts_chunk$set(echo = TRUE)
 - Also, when loading a package that has a conflicted function, immediately after loading the package declare which package to use the function from, e.g.: ```conflict_prefer("filter", "dplyr") ### use filter from dplyr```.
 
 
-## Comment, Comment, Comment
-- You should add comments to almost every line in your code. This will help others to understand your code but also help your future self when you come back to the file one, two, or ten years from now.
 
-## Try to adhere to the r-studio style guide as much as possible
-If possible and sensible, follow the r-studio style guide: [http://adv-r.had.co.nz/Style.html](http://adv-r.had.co.nz/Style.html).  It will make your code more readable.
+## Tables 
+- For Tables I now recommend using the _modelsummary_ package [https://vincentarelbundock.github.io/modelsummary/index.html](https://vincentarelbundock.github.io/modelsummary/index.html). It is great to work with and has lots of functionality. 
+
+
   
