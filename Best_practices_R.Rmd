@@ -24,6 +24,7 @@ In general, there are lots of resources online and a lot of questions are answer
 
 ## Comment, Comment, Comment
 - You should add comments to almost every line in your code. This will help others to understand your code but also help your future self when you come back to the file one, two, or ten years from now.
+- Comments should include a reason for the code chunk, not just a description.
 
 ## No use of ```rm(list = ls()) ``` at beginning of files
 - Do not empty the workspace with ```rm()```.
@@ -44,6 +45,7 @@ In general, there are lots of resources online and a lot of questions are answer
 
 ## No massive package loading
 - Instead: *only load those packages that are actually used in the file*.
+- All libraries should *always* be loaded at the top of the rcode.
 - Also, pay attention to function conflicts when loading, i.e., which functions are masked when loading a new package.
 - For example, if tidyverse is loaded the lag functions within plm, lfe will not work!
 - Instead: *use the conflicted package*,  see: [https://github.com/r-lib/conflicted](https://github.com/r-lib/conflicted)
