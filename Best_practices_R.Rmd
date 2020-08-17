@@ -1,7 +1,7 @@
 ---
 title: "R Coding Best Practices"
 author: "Florian M. Hollenbach"
-date: "2/22/2019"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output: pdf_document
 ---
 
@@ -36,4 +36,11 @@ knitr::opts_chunk$set(echo = TRUE)
 - Instead: *use the conflicted package*,  see: [https://github.com/r-lib/conflicted](https://github.com/r-lib/conflicted)
 - The conflicted package will alert/throw an error when using any function that has conflict.
 - Also, when loading a package that has a conflicted function, immediately after loading the package declare which package to use the function from, e.g.: ```conflict_prefer("filter", "dplyr") ### use filter from dplyr```.
+
+
+## Comment, Comment, Comment
+- You should add comments to almost every line in your code. This will help others to understand your code but also help your future self when you come back to the file one, two, or ten years from now.
+
+## Try to adhere to the r-studio style guide as much as possible
+If possible and sensible, follow the r-studio style guide: [http://adv-r.had.co.nz/Style.html](http://adv-r.had.co.nz/Style.html).  It will make your code more readable.
   
