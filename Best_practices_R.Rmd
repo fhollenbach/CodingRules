@@ -53,7 +53,7 @@ In general, there are lots of resources online and a lot of questions are answer
 
 
 ## Tables 
-- For Tables I now recommend using the _modelsummary_ package [https://vincentarelbundock.github.io/modelsummary/index.html](https://vincentarelbundock.github.io/modelsummary/index.html). It is great to work with and has lots of functionality. 
+- For Tables I now recommend using the _modelsummary_ package [https://vincentarelbundock.github.io/modelsummary/index.html](https://vincentarelbundock.github.io/modelsummary/index.html). It is great to work with and has lots of functionality. Also, the package author ([Vincent Arel-Bundock](http://arelbundock.com/)) is super helpful and responsive.
 
 
   
